@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     name: "taba.sh",
     href: "https://taba.sh",
-    label: "Open source · creator",
+    label: "AI tooling",
     mark: ">_",
     image: "project-screens/taba.webp",
     tone: "graphite",
@@ -20,19 +20,9 @@ export const projects: Project[] = [
       "Git worktree collections for work that spans repositories, agents, and environments. One workspace per task.",
   },
   {
-    name: "jenda.run",
-    href: "https://jenda.run",
-    label: "Product · builder",
-    mark: "↻",
-    image: "project-screens/jenda.webp",
-    tone: "blue",
-    description:
-      "A shared, understandable view of time-based workflows — built to make complex processes easier to run together.",
-  },
-  {
     name: "weeks.app",
     href: "https://about.weeks.app",
-    label: "Product · creator",
+    label: "Shift planning",
     mark: "W",
     image: "project-screens/weeks.webp",
     tone: "forest",
@@ -42,16 +32,26 @@ export const projects: Project[] = [
   {
     name: "kaessli.app",
     href: "https://kaessli.app",
-    label: "Product · builder",
+    label: "Budgets and Inventory",
     mark: "K",
     tone: "amber",
     description:
       "A focused application for shared money, clear records, and less administrative friction.",
   },
   {
+    name: "jenda.run",
+    href: "https://jenda.run",
+    label: "Agendas and Rundowns",
+    mark: "↻",
+    image: "project-screens/jenda.webp",
+    tone: "blue",
+    description:
+      "A shared, understandable view of time-based workflows — built to make complex processes easier to run together.",
+  },
+  {
     name: "OMS Prüfservice",
     href: "https://oms-pruefservice.de",
-    label: "Long-term engagement",
+    label: "Consultant / Data Lead",
     mark: "Ω",
     image: "project-screens/oms.webp",
     tone: "blue",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
   {
     name: "whoo",
     href: "https://whoo.ai",
-    label: "Client work · via Talendos",
+    label: "Cloud-based Intercoms",
     mark: "◎",
     image: "project-screens/whoo.webp",
     tone: "plum",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     name: "Talendos",
     href: "https://talendos.com",
-    label: "Company · founder",
+    label: "Emerging values",
     mark: "T",
     image: "project-screens/talendos.webp",
     tone: "forest",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     name: "Faktum Faktura",
     href: "https://www.faktumfaktura.de",
-    label: "Product · partner",
+    label: "Invoicing Software",
     mark: "F",
     image: "project-screens/faktum-faktura.webp",
     tone: "amber",
@@ -90,12 +90,13 @@ export const projects: Project[] = [
   },
   {
     name: "CC Billing",
-    href: "https://virksomhet.brreg.no/nb/oppslag/enheter/930221856",
-    label: "Company · partner",
+    href: "https://www.carecloud.de/",
+    label: "Billing for Elderly Care",
     mark: "CC",
-    tone: "graphite",
+    image: "project-screens/carecloud.webp",
+    tone: "blue",
     description:
-      "Norwegian software company working on practical billing and business administration products.",
+      "Billing software for residential elderly care, connected to the wider CareCloud platform for care documentation and operations.",
   },
 ];
 
@@ -104,6 +105,7 @@ export const interests = [
     name: "Omarchy",
     mark: "O",
     href: "https://omarchy.org",
+    image: "interest-screens/omarchy.webp",
     description:
       "A beautiful, modern, opinionated Linux environment — and a community I contribute to.",
   },
@@ -111,22 +113,33 @@ export const interests = [
     name: "Omacom / Hype",
     mark: "H",
     href: "https://github.com/omacom/hype",
+    image: "interest-screens/hype.webp",
     secondaryHref: "https://github.com/lcorneliussen/hype",
     secondaryLabel: "my fork",
     description: "Simple Markdown presentations with a visual slide editor.",
   },
   {
-    name: "OmaContrib",
+    name: "omacontrib",
     mark: "OC",
     href: "https://github.com/lcorneliussen/omacontrib",
+    image: "interest-screens/omacontrib.webp",
     description:
       "An Omarchy bar plugin that follows upstream contributions until the fix lands locally.",
   },
   {
-    name: "OmaEgo",
+    name: "omaego",
     mark: "OE",
     href: "https://github.com/lcorneliussen/omaego",
+    image: "interest-screens/omaego.webp",
     description:
       "Context-separated browser identities, workspace-aware routing, and web apps for Omarchy.",
+  },
+  {
+    name: "md365",
+    mark: "M365",
+    href: "https://github.com/lcorneliussen/md365",
+    image: "interest-screens/md365.webp",
+    description:
+      "An AI-native Microsoft 365 CLI that makes mail, calendars, contacts, Teams, and files agent-friendly.",
   },
 ];

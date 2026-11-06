@@ -21,6 +21,7 @@ const xProfile = await getXProfileStatus();
       content="Lars Corneliussen builds software products, teams, and the systems around them."
     />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${home}favicon.svg`} type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -37,7 +38,8 @@ const xProfile = await getXProfileStatus();
   <body>
     <header class="shell site-header">
       <a class="wordmark" href={home}>
-        Lars Corneliussen
+        <img src={`${home}lc-mark.svg`} alt="" width="28" height="28" />
+        <span>Lars Corneliussen</span>
       </a>
       <div class="header-links">
         <nav class="site-nav" aria-label="Portfolio sections">
@@ -70,7 +72,12 @@ const xProfile = await getXProfileStatus();
               Updates
             </button>
           )}
-          <a class="nav-link" href={`${home}bcc/`}>BCC</a>
+          <a class="nav-link" href={`${home}bcc/`}>
+            BCC
+          </a>
+          <a class="nav-link" href={`${home}about/`}>
+            About
+          </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
           <a
@@ -169,7 +176,12 @@ const xProfile = await getXProfileStatus();
               Updates
             </button>
           )}
-          <a class="nav-link" href={`${home}bcc/`}>BCC</a>
+          <a class="nav-link" href={`${home}bcc/`}>
+            BCC
+          </a>
+          <a class="nav-link" href={`${home}about/`}>
+            About
+          </a>
         </nav>
         <section
           id="work"
@@ -276,13 +288,27 @@ const xProfile = await getXProfileStatus();
             aria-label="Open-source interests. Swipe or use arrow keys to browse."
           >
             {interests.map((interest, index) => (
-              <article class="interest-item">
+              <article
+                class:list={["interest-item", { "has-visual": interest.image }]}
+              >
                 <span class="project-index">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span class="interest-mark" aria-hidden="true">
-                  {interest.mark}
-                </span>
+                {interest.image ? (
+                  <div class="interest-visual" aria-hidden="true">
+                    <img
+                      src={`${home}${interest.image}`}
+                      alt=""
+                      width="720"
+                      height="405"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <span class="interest-mark" aria-hidden="true">
+                    {interest.mark}
+                  </span>
+                )}
                 <h3>{interest.name}</h3>
                 <p>{interest.description}</p>
                 <div class="interest-links">
