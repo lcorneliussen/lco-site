@@ -52,15 +52,6 @@ const xProfile = await getXProfileStatus();
           >
             Work
           </button>
-          <button
-            class="nav-tab"
-            type="button"
-            data-show-panel="interests"
-            aria-controls="interests"
-            aria-selected="false"
-          >
-            Interests
-          </button>
           {xProfile?.isFresh && (
             <button
               class="nav-tab"
@@ -73,10 +64,10 @@ const xProfile = await getXProfileStatus();
             </button>
           )}
           <a class="nav-link" href={`${home}bcc/`}>
-            BCC
+            Church
           </a>
           <a class="nav-link" href={`${home}about/`}>
-            About
+            Private
           </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">

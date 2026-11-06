@@ -1213,6 +1213,13 @@ h2 {
   max-width: 15ch;
   font-size: clamp(1.8rem, 3.4vw, 3.5rem);
 }
+.bcc-about-copy > p:last-child {
+  max-width: 68ch;
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.72rem, 0.95vw, 0.88rem);
+  line-height: 1.45;
+}
 .bcc-viewport .bcc-links {
   align-content: end;
 }
@@ -1316,6 +1323,15 @@ h2 {
     line-height: 1.4;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+  }
+  .bcc-about-copy > p:last-child {
+    display: -webkit-box;
+    margin-top: 0.35rem;
+    overflow: hidden;
+    font-size: 0.68rem;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
   .bcc-local-card > p {
     -webkit-line-clamp: 3;

@@ -39,18 +39,15 @@ const year = new Date().getFullYear();
           <a class="nav-link" href={`${home}#work`}>
             Work
           </a>
-          <a class="nav-link" href={`${home}#interests`}>
-            Interests
-          </a>
           <a
             class="nav-link is-active"
             href={`${home}bcc/`}
             aria-current="page"
           >
-            BCC
+            Church
           </a>
           <a class="nav-link" href={`${home}about/`}>
-            About
+            Private
           </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
@@ -116,71 +113,21 @@ const year = new Date().getFullYear();
           aria-controls="bcc-dcg"
           data-bcc-tab="dcg"
         >
-          DCG Waltrop
+          Volunteering
         </button>
         <button
           class="nav-tab"
           type="button"
           role="tab"
           aria-selected="false"
-          aria-controls="bcc-resources"
-          data-bcc-tab="resources"
-        >
-          Resources
-        </button>
-        <button
-          class="nav-tab"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="bcc-overview"
-          data-bcc-tab="overview"
+          aria-controls="bcc-about-panel"
+          data-bcc-tab="about"
         >
           About BCC
         </button>
       </nav>
 
       <div class="bcc-panels">
-        <section
-          id="bcc-overview"
-          class="bcc-panel"
-          role="tabpanel"
-          data-bcc-panel="overview"
-          aria-labelledby="about-bcc"
-          hidden
-        >
-          <article class="bcc-overview-card">
-            <div>
-              <p class="eyebrow">About BCC</p>
-              <h2 id="about-bcc">A worldwide Christian fellowship.</h2>
-            </div>
-            <p>
-              Brunstad Christian Church is an international Christian church
-              with origins in Norway and fellow believers across the world. Its
-              church life centres on following Jesus, personal discipleship, and
-              active Christian fellowship—with substantial work for children and
-              young people.
-            </p>
-          </article>
-          <article class="bcc-overview-card bcc-local-card">
-            <div>
-              <p class="eyebrow">My local community</p>
-              <h2>DCG Waltrop.</h2>
-            </div>
-            <p>
-              An evangelical free church in the Ruhr area, with regular services
-              and a broad range of activities across generations.
-            </p>
-            <button
-              class="text-link bcc-panel-link"
-              type="button"
-              data-open-bcc-panel="dcg"
-            >
-              My involvement →
-            </button>
-          </article>
-        </section>
-
         <section
           id="bcc-dcg"
           class="bcc-panel bcc-dcg-panel is-visible"
@@ -307,17 +254,24 @@ const year = new Date().getFullYear();
         </section>
 
         <section
-          id="bcc-resources"
+          id="bcc-about-panel"
           class="bcc-panel bcc-resources-panel"
           role="tabpanel"
-          data-bcc-panel="resources"
-          aria-labelledby="bcc-resources-title"
+          data-bcc-panel="about"
+          aria-labelledby="bcc-about-title"
           hidden
         >
           <div class="bcc-resource-grid">
-            <div>
-              <p class="eyebrow">Explore</p>
-              <h2 id="bcc-resources-title">Church, literature &amp; songs.</h2>
+            <div class="bcc-about-copy">
+              <p class="eyebrow">About BCC</p>
+              <h2 id="bcc-about-title">A worldwide Christian fellowship.</h2>
+              <p>
+                Brunstad Christian Church is an international Christian church
+                with origins in Norway and fellow believers across the world.
+                Its church life centres on following Jesus, personal
+                discipleship, and active Christian fellowship—with substantial
+                work for children and young people.
+              </p>
             </div>
             <div class="bcc-links">
               <a href="https://bcc.no/en/" target="_blank" rel="noreferrer">
@@ -418,10 +372,7 @@ const year = new Date().getFullYear();
             ),
           );
 
-        const initial =
-          location.hash === "#overview" || location.hash === "#resources"
-            ? location.hash.slice(1)
-            : "dcg";
+        const initial = location.hash === "#about" ? "about" : "dcg";
         showPanel(initial, false);
 
         const reel = document.querySelector("[data-dcg-reel]");
