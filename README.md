@@ -14,4 +14,4 @@ npm run check
 npm run build
 ```
 
-The production build uses the repository Pages base path, `/lco-site/`.
+The production build is served from the custom domain, `https://lcorneliussen.de/`.
