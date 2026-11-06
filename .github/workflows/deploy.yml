@@ -37,3 +37,8 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages can remain queued during GitHub-side congestion. The action's
+          # default of 10 checks aborts after ~50 seconds, well before its
+          # documented 10-minute timeout.
+          error_count: 120
