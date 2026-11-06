@@ -102,24 +102,8 @@ export const projects: Project[] = [
 
 export const interests = [
   {
-    name: "Omarchy",
-    mark: "O",
-    href: "https://omarchy.org",
-    image: "interest-screens/omarchy.webp",
-    description:
-      "A beautiful, modern, opinionated Linux environment — and a community I contribute to.",
-  },
-  {
-    name: "Omacom / Hype",
-    mark: "H",
-    href: "https://github.com/omacom/hype",
-    image: "interest-screens/hype.webp",
-    secondaryHref: "https://github.com/lcorneliussen/hype",
-    secondaryLabel: "my fork",
-    description: "Simple Markdown presentations with a visual slide editor.",
-  },
-  {
     name: "omacontrib",
+    kind: "Open source",
     mark: "OC",
     href: "https://github.com/lcorneliussen/omacontrib",
     image: "interest-screens/omacontrib.webp",
@@ -128,6 +112,7 @@ export const interests = [
   },
   {
     name: "omaego",
+    kind: "Open source",
     mark: "OE",
     href: "https://github.com/lcorneliussen/omaego",
     image: "interest-screens/omaego.webp",
@@ -136,10 +121,30 @@ export const interests = [
   },
   {
     name: "md365",
+    kind: "Open source",
     mark: "M365",
     href: "https://github.com/lcorneliussen/md365",
     image: "interest-screens/md365.webp",
     description:
       "An AI-native Microsoft 365 CLI that makes mail, calendars, contacts, Teams, and files agent-friendly.",
+  },
+  {
+    name: "Omarchy",
+    kind: "Contribution",
+    mark: "O",
+    href: "https://omarchy.org",
+    image: "interest-screens/omarchy.webp",
+    description:
+      "A beautiful, modern, opinionated Linux environment — and a community I contribute to.",
+  },
+  {
+    name: "Omacom / Hype",
+    kind: "Contribution",
+    mark: "H",
+    href: "https://github.com/omacom/hype",
+    image: "interest-screens/hype.webp",
+    secondaryHref: "https://github.com/lcorneliussen/hype",
+    secondaryLabel: "my fork",
+    description: "Simple Markdown presentations with a visual slide editor.",
   },
 ];

@@ -67,7 +67,7 @@ const xProfile = await getXProfileStatus();
             Church
           </a>
           <a class="nav-link" href={`${home}about/`}>
-            Private
+            Personal
           </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
@@ -253,8 +253,8 @@ const xProfile = await getXProfileStatus();
         >
           <div class="showcase-head">
             <div>
-              <p class="eyebrow">Open source</p>
-              <h2 id="interests-title">Current interests.</h2>
+              <p class="eyebrow">Open source · Contributions</p>
+              <h2 id="interests-title">Things I contribute.</h2>
             </div>
             <div class="reel-controls" aria-label="Interest carousel controls">
               <span class="reel-status" data-reel-status>
@@ -285,6 +285,7 @@ const xProfile = await getXProfileStatus();
                 <span class="project-index">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+                <span class="interest-kind">{interest.kind}</span>
                 {interest.image ? (
                   <div class="interest-visual" aria-hidden="true">
                     <img

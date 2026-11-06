@@ -20,13 +20,17 @@ const year = new Date().getFullYear();
     <link rel="canonical" href={canonical} />
     <link rel="icon" href={`${home}favicon.svg`} type="image/svg+xml" />
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="About — Lars Corneliussen" />
+    <meta property="og:title" content="Personal — Lars Corneliussen" />
     <meta
       property="og:description"
       content="A few personal details about Lars Corneliussen."
     />
     <meta property="og:url" content={canonical} />
-    <title>About — Lars Corneliussen</title>
+    <meta
+      property="og:image"
+      content={new URL(`${home}family-waltrop.webp`, Astro.site)}
+    />
+    <title>Personal — Lars Corneliussen</title>
   </head>
   <body class="content-page about-viewport">
     <header class="shell site-header">
@@ -47,7 +51,7 @@ const year = new Date().getFullYear();
             href={`${home}about/`}
             aria-current="page"
           >
-            Private
+            Personal
           </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
@@ -99,10 +103,10 @@ const year = new Date().getFullYear();
           </p>
         </div>
         <img
-          src={`${home}lars-corneliussen.jpg`}
-          alt="Lars Corneliussen"
-          width="170"
-          height="170"
+          src={`${home}family-waltrop.webp`}
+          alt="Lars Corneliussen with his wife and two children"
+          width="1280"
+          height="960"
         />
       </section>
 
