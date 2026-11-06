@@ -104,35 +104,10 @@ const year = new Date().getFullYear();
         </div>
       </section>
 
-      <nav class="bcc-tabs" role="tablist" aria-label="BCC page sections">
-        <button
-          class="nav-tab is-active"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="bcc-dcg"
-          data-bcc-tab="dcg"
-        >
-          Volunteering
-        </button>
-        <button
-          class="nav-tab"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="bcc-about-panel"
-          data-bcc-tab="about"
-        >
-          About BCC
-        </button>
-      </nav>
-
       <div class="bcc-panels">
         <section
           id="bcc-dcg"
-          class="bcc-panel bcc-dcg-panel is-visible"
-          role="tabpanel"
-          data-bcc-panel="dcg"
+          class="bcc-panel bcc-dcg-panel"
           aria-labelledby="dcg-waltrop-title"
         >
           <div class="dcg-panel-head">
@@ -256,10 +231,7 @@ const year = new Date().getFullYear();
         <section
           id="bcc-about-panel"
           class="bcc-panel bcc-resources-panel"
-          role="tabpanel"
-          data-bcc-panel="about"
           aria-labelledby="bcc-about-title"
-          hidden
         >
           <div class="bcc-resource-grid">
             <div class="bcc-about-copy">
@@ -338,43 +310,6 @@ const year = new Date().getFullYear();
     </footer>
     <script is:inline>
       (() => {
-        const tabs = [...document.querySelectorAll("[data-bcc-tab]")];
-        const panels = [...document.querySelectorAll("[data-bcc-panel]")];
-
-        function showPanel(id, updateHash = true) {
-          tabs.forEach((tab) => {
-            const active = tab.dataset.bccTab === id;
-            tab.classList.toggle("is-active", active);
-            tab.setAttribute("aria-selected", String(active));
-          });
-          panels.forEach((panel) => {
-            const active = panel.dataset.bccPanel === id;
-            panel.classList.toggle("is-visible", active);
-            panel.hidden = !active;
-            if (active) panel.dispatchEvent(new Event("panelshown"));
-          });
-          if (updateHash)
-            history.replaceState(
-              null,
-              "",
-              id === "dcg" ? location.pathname : `#${id}`,
-            );
-        }
-
-        tabs.forEach((tab) =>
-          tab.addEventListener("click", () => showPanel(tab.dataset.bccTab)),
-        );
-        document
-          .querySelectorAll("[data-open-bcc-panel]")
-          .forEach((button) =>
-            button.addEventListener("click", () =>
-              showPanel(button.dataset.openBccPanel),
-            ),
-          );
-
-        const initial = location.hash === "#about" ? "about" : "dcg";
-        showPanel(initial, false);
-
         const reel = document.querySelector("[data-dcg-reel]");
         if (!reel) return;
         const cards = [...reel.children];
@@ -410,9 +345,6 @@ const year = new Date().getFullYear();
           .querySelector("[data-dcg-next]")
           ?.addEventListener("click", () => move(1));
         reel.addEventListener("scroll", update, { passive: true });
-        reel
-          .closest("[data-bcc-panel]")
-          ?.addEventListener("panelshown", () => requestAnimationFrame(update));
         reel.addEventListener("keydown", (event) => {
           if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
             event.preventDefault();
