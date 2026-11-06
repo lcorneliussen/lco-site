@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   label: string;
   mark: string;
+  image?: string;
   tone: "forest" | "blue" | "amber" | "plum" | "graphite";
 };
 
@@ -13,6 +14,7 @@ export const projects: Project[] = [
     href: "https://taba.sh",
     label: "Open source · creator",
     mark: ">_",
+    image: "project-screens/taba.webp",
     tone: "graphite",
     description:
       "Git worktree collections for work that spans repositories, agents, and environments. One workspace per task.",
@@ -22,6 +24,7 @@ export const projects: Project[] = [
     href: "https://jenda.run",
     label: "Product · builder",
     mark: "↻",
+    image: "project-screens/jenda.webp",
     tone: "blue",
     description:
       "A shared, understandable view of time-based workflows — built to make complex processes easier to run together.",
@@ -31,6 +34,7 @@ export const projects: Project[] = [
     href: "https://about.weeks.app",
     label: "Product · creator",
     mark: "W",
+    image: "project-screens/weeks.webp",
     tone: "forest",
     description:
       "Staff scheduling for the messy parts of real operations, with an API and agent-friendly command-line tools.",
@@ -49,6 +53,7 @@ export const projects: Project[] = [
     href: "https://oms-pruefservice.de",
     label: "Long-term engagement",
     mark: "Ω",
+    image: "project-screens/oms.webp",
     tone: "blue",
     description:
       "Digital platforms and technology work for electrical safety at scale across Germany.",
@@ -58,6 +63,7 @@ export const projects: Project[] = [
     href: "https://whoo.ai",
     label: "Client work · via Talendos",
     mark: "◎",
+    image: "project-screens/whoo.webp",
     tone: "plum",
     description:
       "Through Talendos: product and platform work where applied AI, customer experience, and operations meet.",
@@ -67,6 +73,7 @@ export const projects: Project[] = [
     href: "https://talendos.com",
     label: "Company · founder",
     mark: "T",
+    image: "project-screens/talendos.webp",
     tone: "forest",
     description:
       "My consultancy and investment company, centred on digital business platforms and durable partnerships.",
@@ -76,6 +83,7 @@ export const projects: Project[] = [
     href: "https://www.faktumfaktura.de",
     label: "Product · partner",
     mark: "F",
+    image: "project-screens/faktum-faktura.webp",
     tone: "amber",
     description:
       "Straightforward invoicing software for small businesses, including e-invoices and local-first data.",
@@ -94,12 +102,14 @@ export const projects: Project[] = [
 export const interests = [
   {
     name: "Omarchy",
+    mark: "O",
     href: "https://omarchy.org",
     description:
       "A beautiful, modern, opinionated Linux environment — and a community I contribute to.",
   },
   {
     name: "Omacom / Hype",
+    mark: "H",
     href: "https://github.com/omacom/hype",
     secondaryHref: "https://github.com/lcorneliussen/hype",
     secondaryLabel: "my fork",
@@ -107,12 +117,14 @@ export const interests = [
   },
   {
     name: "OmaContrib",
+    mark: "OC",
     href: "https://github.com/lcorneliussen/omacontrib",
     description:
       "An Omarchy bar plugin that follows upstream contributions until the fix lands locally.",
   },
   {
     name: "OmaEgo",
+    mark: "OE",
     href: "https://github.com/lcorneliussen/omaego",
     description:
       "Context-separated browser identities, workspace-aware routing, and web apps for Omarchy.",

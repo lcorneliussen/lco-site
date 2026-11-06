@@ -70,6 +70,7 @@ const xProfile = await getXProfileStatus();
               Updates
             </button>
           )}
+          <a class="nav-link" href={`${home}bcc/`}>BCC</a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
           <a
@@ -168,10 +169,11 @@ const xProfile = await getXProfileStatus();
               Updates
             </button>
           )}
+          <a class="nav-link" href={`${home}bcc/`}>BCC</a>
         </nav>
         <section
           id="work"
-          class="showcase-panel is-active"
+          class="showcase-panel is-active is-visible"
           aria-labelledby="work-title"
           data-panel="work"
         >
@@ -216,9 +218,21 @@ const xProfile = await getXProfileStatus();
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <div class="project-mark" aria-hidden="true">
-                  {project.mark}
-                </div>
+                {project.image ? (
+                  <div class="project-visual" aria-hidden="true">
+                    <img
+                      src={`${home}${project.image}`}
+                      alt=""
+                      width="720"
+                      height="405"
+                      loading={index < 4 ? "eager" : "lazy"}
+                    />
+                  </div>
+                ) : (
+                  <div class="project-mark" aria-hidden="true">
+                    {project.mark}
+                  </div>
+                )}
                 <div class="project-copy">
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
@@ -233,7 +247,6 @@ const xProfile = await getXProfileStatus();
           class="showcase-panel"
           aria-labelledby="interests-title"
           data-panel="interests"
-          hidden
         >
           <div class="showcase-head">
             <div>
@@ -266,6 +279,9 @@ const xProfile = await getXProfileStatus();
               <article class="interest-item">
                 <span class="project-index">
                   {String(index + 1).padStart(2, "0")}
+                </span>
+                <span class="interest-mark" aria-hidden="true">
+                  {interest.mark}
                 </span>
                 <h3>{interest.name}</h3>
                 <p>{interest.description}</p>
@@ -301,7 +317,6 @@ const xProfile = await getXProfileStatus();
             aria-labelledby="x-feed-title"
             data-latest-post-at={xProfile.latestPostAt}
             data-panel="on-x"
-            hidden
           >
             <div class="showcase-head">
               <div>
@@ -356,23 +371,39 @@ const xProfile = await getXProfileStatus();
         const tabs = [...document.querySelectorAll("[data-show-panel]")];
         const panels = [...document.querySelectorAll("[data-panel]")];
 
-        function showPanel(id) {
+        const dualLayout = matchMedia(
+          "(min-width: 62rem) and (min-height: 48rem)",
+        );
+        let activePanel = location.hash === "#interests" ? "interests" : "work";
+
+        function syncPanels() {
+          const showBoth = dualLayout.matches && activePanel !== "on-x";
           tabs.forEach((tab) => {
-            const active = tab.dataset.showPanel === id;
+            const active = tab.dataset.showPanel === activePanel;
             tab.classList.toggle("is-active", active);
             tab.setAttribute("aria-selected", String(active));
           });
           panels.forEach((panel) => {
-            const active = panel.dataset.panel === id;
-            panel.hidden = !active;
-            panel.classList.toggle("is-active", active);
-            if (active) panel.dispatchEvent(new Event("panelshown"));
+            const visible = showBoth
+              ? panel.dataset.panel === "work" ||
+                panel.dataset.panel === "interests"
+              : panel.dataset.panel === activePanel;
+            panel.classList.toggle("is-visible", visible);
+            panel.setAttribute("aria-hidden", String(!visible));
+            if (visible) panel.dispatchEvent(new Event("panelshown"));
           });
+        }
+
+        function showPanel(id) {
+          activePanel = id;
+          syncPanels();
         }
 
         tabs.forEach((tab) =>
           tab.addEventListener("click", () => showPanel(tab.dataset.showPanel)),
         );
+        dualLayout.addEventListener("change", syncPanels);
+        syncPanels();
 
         document.querySelectorAll("[data-reel]").forEach((reel) => {
           const panel = reel.closest("[data-panel]");
@@ -448,7 +479,7 @@ const xProfile = await getXProfileStatus();
                 !paused &&
                 !document.hidden &&
                 !reducedMotion.matches &&
-                !panel.hidden
+                panel.classList.contains("is-visible")
               )
                 move(1);
             }, 5200);
