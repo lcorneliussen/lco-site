@@ -1,9 +1,6 @@
 const X_API = "https://api.x.com/2";
+const X_USER_ID = "14855506";
 const TWO_WEEKS_MS = 14 * 24 * 60 * 60 * 1000;
-
-type XUserResponse = {
-  data?: { id?: string };
-};
 
 type XPostsResponse = {
   data?: Array<{ created_at?: string }>;
@@ -28,20 +25,8 @@ export async function getXProfileStatus(): Promise<XProfileStatus | null> {
 
   const headers = { Authorization: `Bearer ${bearerToken}` };
 
-  const userResponse = await fetch(`${X_API}/users/by/username/lcorneliussen`, {
-    headers,
-  });
-
-  if (!userResponse.ok) {
-    throw new Error(`X user lookup failed with HTTP ${userResponse.status}`);
-  }
-
-  const user = (await userResponse.json()) as XUserResponse;
-  const userId = user.data?.id;
-  if (!userId) return null;
-
   const postsResponse = await fetch(
-    `${X_API}/users/${userId}/tweets?max_results=5&tweet.fields=created_at`,
+    `${X_API}/users/${X_USER_ID}/tweets?max_results=5&tweet.fields=created_at`,
     { headers },
   );
 

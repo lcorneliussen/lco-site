@@ -26,6 +26,6 @@ read-only bearer token through a masked CLI prompt:
 gh secret set X_BEARER_TOKEN --repo lcorneliussen/lco-site
 ```
 
-Without that repository secret, the X section is omitted. A daily scheduled
-Pages build refreshes the status; a failed API call fails the new deployment so
-the last known-good site remains online.
+Without that repository secret, the X section is omitted. Scheduled Pages
+builds on Monday and Thursday refresh the status; a failed API call fails the
+new deployment so the last known-good site remains online.
