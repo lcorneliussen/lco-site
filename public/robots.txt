@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lcorneliussen.github.io/lco-site/sitemap-index.xml
