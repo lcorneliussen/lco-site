@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Publish GitHub Pages branch
 
 on:
   push:
@@ -8,37 +8,48 @@ on:
     - cron: "17 6 * * 1,4"
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: pages-branch
   cancel-in-progress: false
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Install, build, and upload
-        uses: withastro/action@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+
+      - name: Install and build
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: |
+          npm ci
+          npm run build
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          # Pages can remain queued during GitHub-side congestion. The action's
-          # default of 10 checks aborts after ~50 seconds, well before its
-          # documented 10-minute timeout.
-          error_count: 120
+      - name: Publish generated site
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          stage_dir="$(mktemp -d)"
+          cp -a dist/. "$stage_dir/"
+          touch "$stage_dir/.nojekyll"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --orphan gh-pages
+          git rm -rf . || true
+          git clean -fdx
+          cp -a "$stage_dir/." .
+          git add -A
+          git commit -m "Publish ${SOURCE_SHA}"
+          git push --force origin gh-pages
