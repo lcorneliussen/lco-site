@@ -141,7 +141,7 @@ export const interests = [
   },
   {
     name: "Omarchy",
-    kind: "Contribution",
+    kind: "PR submitted",
     mark: "O",
     href: "https://omarchy.org",
     image: "interest-screens/omarchy.webp",
@@ -150,12 +150,22 @@ export const interests = [
   },
   {
     name: "Omacom / Hype",
-    kind: "Contribution",
+    kind: "PR submitted",
     mark: "H",
     href: "https://github.com/omacom/hype",
     image: "interest-screens/hype.webp",
     secondaryHref: "https://github.com/lcorneliussen/hype",
     secondaryLabel: "my fork",
     description: "Simple Markdown presentations with a visual slide editor.",
+  },
+  {
+    name: "OpenClaw",
+    kind: "PR submitted",
+    mark: "OC",
+    href: "https://github.com/openclaw/openclaw",
+    primaryLabel: "GitHub",
+    image: "interest-screens/openclaw.webp",
+    description:
+      "The open-source AI assistant that gets things done across operating systems and platforms.",
   },
 ];
