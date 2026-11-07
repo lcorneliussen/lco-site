@@ -113,7 +113,7 @@ export const projects: Project[] = [
 export const interests = [
   {
     name: "omacontrib",
-    kind: "Open source",
+    kind: "My open-source project",
     mark: "OC",
     href: "https://github.com/lcorneliussen/omacontrib",
     primaryLabel: "GitHub",
@@ -123,7 +123,7 @@ export const interests = [
   },
   {
     name: "omaego",
-    kind: "Open source",
+    kind: "My open-source project",
     mark: "OE",
     href: "https://github.com/lcorneliussen/omaego",
     image: "interest-screens/omaego.webp",
@@ -132,7 +132,7 @@ export const interests = [
   },
   {
     name: "md365",
-    kind: "Open source",
+    kind: "My open-source project",
     mark: "M365",
     href: "https://github.com/lcorneliussen/md365",
     image: "interest-screens/md365.webp",
