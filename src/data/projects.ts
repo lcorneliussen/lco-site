@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     name: "Faktum Faktura",
     href: "https://www.faktumfaktura.de",
-    label: "Invoicing Software",
+    label: "Investment",
     mark: "F",
     image: "project-screens/faktum-faktura.webp",
     tone: "amber",
@@ -91,12 +91,22 @@ export const projects: Project[] = [
   {
     name: "CC Billing",
     href: "https://www.carecloud.de/",
-    label: "Billing for Elderly Care",
+    label: "Investment",
     mark: "CC",
     image: "project-screens/carecloud.webp",
     tone: "blue",
     description:
       "Billing software for residential elderly care, connected to the wider CareCloud platform for care documentation and operations.",
+  },
+  {
+    name: "revans.ai",
+    href: "https://revans.ai/",
+    label: "Investment",
+    mark: "R",
+    image: "project-screens/revans.webp",
+    tone: "plum",
+    description:
+      "Feedback operations software that turns reviews and surveys into visible patterns and measurable improvements.",
   },
 ];
 

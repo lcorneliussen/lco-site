@@ -422,7 +422,15 @@ const xProfile = await getXProfileStatus();
           const cards = [...reel.children];
           const status = panel.querySelector("[data-reel-status]");
           let paused = false;
+          let userControlled = false;
           let timer;
+
+          const stopAutoplay = () => {
+            if (userControlled) return;
+            userControlled = true;
+            reel.dataset.autoplayStopped = "true";
+            clearInterval(timer);
+          };
 
           const cardStep = () =>
             cards[1]
@@ -461,25 +469,34 @@ const xProfile = await getXProfileStatus();
 
           panel
             .querySelector("[data-reel-prev]")
-            ?.addEventListener("click", () => move(-1));
+            ?.addEventListener("click", () => {
+              stopAutoplay();
+              move(-1);
+            });
           panel
             .querySelector("[data-reel-next]")
-            ?.addEventListener("click", () => move(1));
+            ?.addEventListener("click", () => {
+              stopAutoplay();
+              move(1);
+            });
           reel.addEventListener("scroll", update, { passive: true });
           panel.addEventListener("panelshown", update);
           reel.addEventListener("keydown", (event) => {
             if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
               event.preventDefault();
+              stopAutoplay();
               move(event.key === "ArrowRight" ? 1 : -1);
             }
           });
-          ["mouseenter", "focusin", "pointerdown", "touchstart"].forEach(
-            (name) =>
-              reel.addEventListener(name, () => (paused = true), {
-                passive: true,
-              }),
+          ["pointerdown", "touchstart", "wheel"].forEach((name) =>
+            reel.addEventListener(name, stopAutoplay, { passive: true }),
           );
-          ["mouseleave", "focusout", "pointerup", "touchend"].forEach((name) =>
+          ["mouseenter", "focusin"].forEach((name) =>
+            reel.addEventListener(name, () => (paused = true), {
+              passive: true,
+            }),
+          );
+          ["mouseleave", "focusout"].forEach((name) =>
             reel.addEventListener(name, () => (paused = false), {
               passive: true,
             }),
@@ -489,6 +506,7 @@ const xProfile = await getXProfileStatus();
             timer = setInterval(() => {
               if (
                 !paused &&
+                !userControlled &&
                 !document.hidden &&
                 !reducedMotion.matches &&
                 panel.classList.contains("is-visible")
