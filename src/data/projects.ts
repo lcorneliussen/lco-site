@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     name: "revans.ai",
     href: "https://revans.ai/",
-    label: "Angel investor",
+    label: "Early-stage investor",
     mark: "R",
     image: "project-screens/revans.webp",
     tone: "plum",
