@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     name: "Faktum Faktura",
     href: "https://www.faktumfaktura.de",
-    label: "Investment",
+    label: "Co-owner",
     mark: "F",
     image: "project-screens/faktum-faktura.webp",
     tone: "amber",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     name: "CC Billing",
     href: "https://www.carecloud.de/",
-    label: "Investment",
+    label: "Co-owner",
     mark: "CC",
     image: "project-screens/carecloud.webp",
     tone: "blue",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
   {
     name: "revans.ai",
     href: "https://revans.ai/",
-    label: "Investment",
+    label: "Angel investor",
     mark: "R",
     image: "project-screens/revans.webp",
     tone: "plum",
