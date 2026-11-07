@@ -46,6 +46,20 @@ node scripts/visual-review.mjs review --base-url https://lcorneliussen.de
 The Claude step is optional and never edits the repository. It is restricted
 to reading the generated screenshots and metrics.
 
+## Contribution status
+
+The Omarchy, Hype, and OpenClaw cards read their status from
+`src/data/contribution-status.json`. A scheduled GitHub Action checks public
+pull requests by `lcorneliussen` every six hours. Once any pull request in a
+project is merged, its card changes monotonically from `PR submitted` to
+`PR merged`, commits that update, and triggers the normal Pages deployment.
+
+Run the same check locally with:
+
+```sh
+npm run contributions:sync
+```
+
 ## Optional X timeline
 
 The build checks the latest post date through the X API. It embeds the official

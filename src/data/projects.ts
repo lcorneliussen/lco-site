@@ -1,3 +1,5 @@
+import contributionStatus from "./contribution-status.json";
+
 export type Project = {
   name: string;
   href: string;
@@ -141,7 +143,7 @@ export const interests = [
   },
   {
     name: "Omarchy",
-    kind: "PR submitted",
+    kind: contributionStatus.omarchy,
     mark: "O",
     href: "https://omarchy.org",
     image: "interest-screens/omarchy.webp",
@@ -150,7 +152,7 @@ export const interests = [
   },
   {
     name: "Omacom / Hype",
-    kind: "PR submitted",
+    kind: contributionStatus.hype,
     mark: "H",
     href: "https://github.com/omacom/hype",
     image: "interest-screens/hype.webp",
@@ -160,7 +162,7 @@ export const interests = [
   },
   {
     name: "OpenClaw",
-    kind: "PR submitted",
+    kind: contributionStatus.openclaw,
     mark: "OC",
     href: "https://github.com/openclaw/openclaw",
     primaryLabel: "GitHub",

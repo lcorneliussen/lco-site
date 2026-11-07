@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
+    "contributions:sync": "node scripts/sync-contribution-status.mjs",
     "preview": "astro preview",
     "visual:capture": "npm run build && node scripts/visual-review.mjs capture",
     "visual:review": "npm run build && node scripts/visual-review.mjs review",
