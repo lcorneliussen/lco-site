@@ -10,6 +10,8 @@
     "build": "astro build",
     "check": "astro check",
     "preview": "astro preview",
+    "visual:capture": "npm run build && node scripts/visual-review.mjs capture",
+    "visual:review": "npm run build && node scripts/visual-review.mjs review",
     "astro": "astro"
   },
   "dependencies": {
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
+    "playwright-core": "^1.65.0",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^1.1.2",
     "typescript": "^5.9.3"

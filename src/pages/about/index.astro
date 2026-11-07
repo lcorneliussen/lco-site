@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
     <meta property="og:url" content={canonical} />
     <meta
       property="og:image"
-      content={new URL(`${home}family-waltrop.webp`, Astro.site)}
+      content={new URL(`${home}lars-corneliussen.jpg`, Astro.site)}
     />
     <title>Personal — Lars Corneliussen</title>
   </head>
@@ -103,16 +103,20 @@ const year = new Date().getFullYear();
           </p>
         </div>
         <img
-          src={`${home}family-waltrop.webp`}
-          alt="Lars Corneliussen with his wife and two children"
-          width="1280"
-          height="960"
+          class="personal-portrait"
+          src={`${home}lars-corneliussen.jpg`}
+          alt="Portrait of Lars Corneliussen"
+          width="170"
+          height="170"
         />
       </section>
 
       <section class="about-facts" aria-label="Personal details">
         <article class="about-card about-home">
-          <span>01</span>
+          <div class="about-card-media about-card-symbol" aria-hidden="true">
+            <span>01</span>
+            <strong>W</strong>
+          </div>
           <div>
             <p class="eyebrow">Home</p>
             <h2>Waltrop, Germany.</h2>
@@ -120,7 +124,10 @@ const year = new Date().getFullYear();
           </div>
         </article>
         <article class="about-card about-marriage">
-          <span>02</span>
+          <div class="about-card-media about-card-symbol" aria-hidden="true">
+            <span>02</span>
+            <strong>2004</strong>
+          </div>
           <div>
             <p class="eyebrow">Together</p>
             <h2>Married since 2004.</h2>
@@ -128,7 +135,15 @@ const year = new Date().getFullYear();
           </div>
         </article>
         <article class="about-card about-family">
-          <span>03</span>
+          <div class="about-card-media">
+            <span>03</span>
+            <img
+              src={`${home}family-waltrop.webp`}
+              alt="Lars Corneliussen with his wife and two children"
+              width="1280"
+              height="960"
+            />
+          </div>
           <div>
             <p class="eyebrow">Family</p>
             <h2>Father of two.</h2>
