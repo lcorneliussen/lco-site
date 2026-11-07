@@ -106,6 +106,7 @@ export const interests = [
     kind: "Open source",
     mark: "OC",
     href: "https://github.com/lcorneliussen/omacontrib",
+    primaryLabel: "GitHub",
     image: "interest-screens/omacontrib.webp",
     description:
       "An Omarchy bar plugin that follows upstream contributions until the fix lands locally.",
