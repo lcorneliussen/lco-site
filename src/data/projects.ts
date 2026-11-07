@@ -96,7 +96,7 @@ export const projects: Project[] = [
     image: "project-screens/carecloud.webp",
     tone: "blue",
     description:
-      "Billing software for residential elderly care, connected to the wider CareCloud platform for care documentation and operations.",
+      "Billing software for residential elderly care, built as part of the CareCloud platform for care documentation and operations.",
   },
   {
     name: "revans.ai",
