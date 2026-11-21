@@ -37,17 +37,20 @@ const year = new Date().getFullYear();
       <div class="header-links">
         <nav class="site-nav page-nav" aria-label="Main navigation">
           <a class="nav-link" href={`${home}#work`}>
-            Work
+            <span class="landscape-copy">Work</span>
+            <span class="portrait-copy">Arbeit</span>
           </a>
           <a
             class="nav-link is-active"
             href={`${home}bcc/`}
             aria-current="page"
           >
-            Church
+            <span class="landscape-copy">Church</span>
+            <span class="portrait-copy">Gemeinde</span>
           </a>
           <a class="nav-link" href={`${home}about/`}>
-            Personal
+            <span class="landscape-copy">Personal</span>
+            <span class="portrait-copy">Privat</span>
           </a>
         </nav>
         <nav class="social-links" aria-label="Social profiles">
@@ -91,12 +94,23 @@ const year = new Date().getFullYear();
     <main class="shell bcc-page">
       <section class="bcc-hero">
         <div>
-          <p class="eyebrow">Faith · Community · Service</p>
-          <h1>Active in DCG Waltrop.</h1>
-          <p class="intro">
+          <p class="eyebrow">
+            <span class="landscape-copy">Faith · Community · Service</span>
+            <span class="portrait-copy">Glaube · Gemeinschaft · Dienst</span>
+          </p>
+          <h1>
+            <span class="landscape-copy">Active in DCG Waltrop.</span>
+            <span class="portrait-copy">Aktiv in der DCG Waltrop.</span>
+          </h1>
+          <p class="intro landscape-copy">
             Faith and church community are an important part of my life—locally
             at DCG Waltrop and in the wider international fellowship of BCC
             (called DCG in Germany).
+          </p>
+          <p class="intro portrait-copy">
+            Glaube und Gemeindeleben sind ein wichtiger Teil meines Lebens – vor
+            Ort in der DCG Waltrop und in der internationalen Gemeinschaft von
+            BCC.
           </p>
         </div>
         <div class="bcc-monogram" aria-hidden="true">
@@ -112,8 +126,16 @@ const year = new Date().getFullYear();
         >
           <div class="dcg-panel-head">
             <div>
-              <p class="eyebrow">Local church · DCG Waltrop</p>
-              <h2 id="dcg-waltrop-title">Where I take responsibility.</h2>
+              <p class="eyebrow">
+                <span class="landscape-copy">Local church · DCG Waltrop</span>
+                <span class="portrait-copy">Lokale Gemeinde · DCG Waltrop</span>
+              </p>
+              <h2 id="dcg-waltrop-title">
+                <span class="landscape-copy">Where I take responsibility.</span>
+                <span class="portrait-copy">
+                  Wo ich Verantwortung übernehme.
+                </span>
+              </h2>
             </div>
             <div
               class="reel-controls"
@@ -160,12 +182,26 @@ const year = new Date().getFullYear();
                 />
               </div>
               <div>
-                <p class="eyebrow">On rotation</p>
-                <h3>Event leadership &amp; production</h3>
-                <p>
+                <p class="eyebrow">
+                  <span class="landscape-copy">On rotation</span>
+                  <span class="portrait-copy">Im Wechsel</span>
+                </p>
+                <h3>
+                  <span class="landscape-copy">
+                    Event leadership &amp; production
+                  </span>
+                  <span class="portrait-copy">
+                    Veranstaltungsleitung &amp; Produktion
+                  </span>
+                </h3>
+                <p class="landscape-copy">
                   Serving as project lead or producer for anniversaries,
                   weddings, funerals and memorial services, summer and Christmas
                   celebrations, and retreats.
+                </p>
+                <p class="portrait-copy">
+                  Projektleitung oder Produktion für Jubiläen, Hochzeiten,
+                  Trauerfeiern, Sommer- und Weihnachtsfeste sowie Freizeiten.
                 </p>
                 <div class="dcg-app-links">
                   <a href="https://jenda.run" target="_blank" rel="noreferrer">
@@ -195,7 +231,9 @@ const year = new Date().getFullYear();
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <span class="dcg-link-mark" aria-hidden="true">K</span>
+                    <span class="dcg-link-mark" aria-hidden="true">
+                      K
+                    </span>
                     kaessli.app ↗
                   </a>
                 </div>
@@ -218,11 +256,25 @@ const year = new Date().getFullYear();
                 />
               </div>
               <div>
-                <p class="eyebrow">Responsible</p>
-                <h3>Event technology &amp; media</h3>
-                <p>
+                <p class="eyebrow">
+                  <span class="landscape-copy">Responsible</span>
+                  <span class="portrait-copy">Verantwortlich</span>
+                </p>
+                <h3>
+                  <span class="landscape-copy">
+                    Event technology &amp; media
+                  </span>
+                  <span class="portrait-copy">
+                    Veranstaltungstechnik &amp; Medien
+                  </span>
+                </h3>
+                <p class="landscape-copy">
                   Taking responsibility for technical production and media—from
                   dependable systems to sound, visuals, and content delivery.
+                </p>
+                <p class="portrait-copy">
+                  Verantwortung für technische Produktion und Medien – von
+                  zuverlässigen Systemen bis zu Ton, Bild und Inhalten.
                 </p>
               </div>
             </article>
@@ -243,14 +295,33 @@ const year = new Date().getFullYear();
                 />
               </div>
               <div>
-                <p class="eyebrow">Responsible</p>
-                <h3>Community initiatives &amp; fundraising</h3>
-                <p>
+                <p class="eyebrow">
+                  <span class="landscape-copy">Responsible</span>
+                  <span class="portrait-copy">Verantwortlich</span>
+                </p>
+                <h3>
+                  <span class="landscape-copy">
+                    Community initiatives &amp; fundraising
+                  </span>
+                  <span class="portrait-copy">
+                    Gemeinschaftsaktionen &amp; Fundraising
+                  </span>
+                </h3>
+                <p class="landscape-copy">
                   Organising practical initiatives and fundraising activities
                   that bring people together and help finance shared goals.
                 </p>
+                <p class="portrait-copy">
+                  Praktische Aktionen und Fundraising, die Menschen verbinden
+                  und gemeinsame Projekte finanzieren.
+                </p>
                 <div class="dcg-app-links">
-                  <span>Still needs the right software :D</span>
+                  <span class="landscape-copy">
+                    Still needs the right software :D
+                  </span>
+                  <span class="portrait-copy">
+                    Dafür fehlt noch die richtige Software :D
+                  </span>
                 </div>
               </div>
             </article>
@@ -261,7 +332,8 @@ const year = new Date().getFullYear();
             target="_blank"
             rel="noreferrer"
           >
-            Visit DCG Waltrop ↗
+            <span class="landscape-copy">Visit DCG Waltrop ↗</span>
+            <span class="portrait-copy">DCG Waltrop besuchen ↗</span>
           </a>
         </section>
 
@@ -272,14 +344,30 @@ const year = new Date().getFullYear();
         >
           <div class="bcc-resource-grid">
             <div class="bcc-about-copy">
-              <p class="eyebrow">About BCC</p>
-              <h2 id="bcc-about-title">Following Jesus in active fellowship.</h2>
-              <p>
+              <p class="eyebrow">
+                <span class="landscape-copy">About BCC</span>
+                <span class="portrait-copy">Über BCC</span>
+              </p>
+              <h2 id="bcc-about-title">
+                <span class="landscape-copy">
+                  Following Jesus in active fellowship.
+                </span>
+                <span class="portrait-copy">
+                  Jesus nachfolgen – in aktiver Gemeinschaft.
+                </span>
+              </h2>
+              <p class="landscape-copy">
                 BCC is an international Christian community with roots in
                 Norway. Its preaching emphasizes personal conversion, a life of
                 discipleship, obedience of faith, and sanctification in an
                 active church community—with extensive volunteer-led work for
                 children and young people.
+              </p>
+              <p class="portrait-copy">
+                BCC ist eine internationale christliche Gemeinschaft mit Wurzeln
+                in Norwegen. Im Mittelpunkt stehen persönliche Bekehrung,
+                Nachfolge Jesu, Glaubensgehorsam und Heiligung – verbunden mit
+                viel ehrenamtlicher Arbeit für Kinder und Jugendliche.
               </p>
             </div>
             <div class="bcc-links">
@@ -308,7 +396,12 @@ const year = new Date().getFullYear();
                 />
                 <span>
                   <strong>DCG Deutschland</strong>
-                  <small>German community ↗</small>
+                  <small>
+                    <span class="landscape-copy">German community ↗</span>
+                    <span class="portrait-copy">
+                      Gemeinschaft in Deutschland ↗
+                    </span>
+                  </small>
                 </span>
               </a>
               <a
@@ -324,7 +417,10 @@ const year = new Date().getFullYear();
                 />
                 <span>
                   <strong>Hidden Treasures</strong>
-                  <small>Christian literature ↗</small>
+                  <small>
+                    <span class="landscape-copy">Christian literature ↗</span>
+                    <span class="portrait-copy">Christliche Literatur ↗</span>
+                  </small>
                 </span>
               </a>
               <a
@@ -340,14 +436,20 @@ const year = new Date().getFullYear();
                 />
                 <span>
                   <strong>Song Treasures</strong>
-                  <small>Songs and melodies ↗</small>
+                  <small>
+                    <span class="landscape-copy">Songs and melodies ↗</span>
+                    <span class="portrait-copy">Lieder und Melodien ↗</span>
+                  </small>
                 </span>
               </a>
             </div>
           </div>
           <article class="bcc-music" aria-labelledby="hidden-treasures-title">
             <div class="bcc-music-copy">
-              <p class="eyebrow">Listen</p>
+              <p class="eyebrow">
+                <span class="landscape-copy">Listen</span>
+                <span class="portrait-copy">Anhören</span>
+              </p>
               <h2 id="hidden-treasures-title">Hidden Treasures Music</h2>
             </div>
             <div class="youtube-embed">
@@ -366,7 +468,8 @@ const year = new Date().getFullYear();
               target="_blank"
               rel="noreferrer"
             >
-              Open channel ↗
+              <span class="landscape-copy">Open channel ↗</span>
+              <span class="portrait-copy">Kanal öffnen ↗</span>
             </a>
           </article>
         </section>
@@ -375,7 +478,10 @@ const year = new Date().getFullYear();
 
     <footer class="shell compact-footer content-footer">
       <span>© {year} Lars Corneliussen</span>
-      <a href={home}>Back to portfolio</a>
+      <a href={home}>
+        <span class="landscape-copy">Back to portfolio</span>
+        <span class="portrait-copy">Zurück zum Portfolio</span>
+      </a>
     </footer>
     <script is:inline>
       (() => {
