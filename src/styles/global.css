@@ -1116,10 +1116,6 @@ h2 {
   height: 100dvh;
   overflow: hidden;
 }
-
-.portrait-copy {
-  display: none;
-}
 .bcc-viewport .bcc-page {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
@@ -1566,16 +1562,6 @@ h2 {
     grid-row: 3;
     grid-column: 1;
     margin: 0;
-  }
-}
-
-@media (max-width: 38rem) and (orientation: portrait) {
-  .bcc-viewport .landscape-copy {
-    display: none !important;
-  }
-
-  .bcc-viewport .portrait-copy {
-    display: revert !important;
   }
 }
 
